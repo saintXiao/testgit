@@ -1,0 +1,851 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <script src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/repoAddr.js" charset="utf-8"></script>
+
+    <script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/tracking.js" charset="utf-8"></script>  
+
+    <script id="allmobilize" charset="utf-8" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/allmobilize.js"></script><style type="text/css"></style>
+ <meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="#">
+
+    <title>windows下整合UCenter、ECShop、Discus - 为了忘却的专栏
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="安装环境：windowsWampServer 2.1c [28/12/10]&nbsp;Inclus :&nbsp;- Apache 2.2.17&nbsp;- Php 5.3.4 (version 64 bits)&nbsp;- Php 5.3.3 (version 32 bits)&nbsp;- Mysql 5.1.53 (version 64 bits)&nbsp;- Mysql 5.5.8 (version 32 bits)&nbsp;- XDebug 2.1.">
+    <script src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad.js"></script>
+        <!--new top-->
+       
+        <link rel="stylesheet" href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/index.css">
+        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style_003.css">
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/lwx2615/rss/list">
+    <link rel="shortcut icon" href="http://csdnimg.cn/public/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/nobg_code.css">
+ 
+
+
+<script src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/share.js"></script><script src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/main_002.js" charset="utf-8" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/bdsstyle.css"><script src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/sm.js" async="" charset="utf-8"></script><link rel="stylesheet" type="text/css" href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style.css"><link href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style_002.css" rel="stylesheet" type="text/css"><script src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/logger.js"></script><link href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/share_style0_16.css" rel="stylesheet"></head>
+<body><iframe style="display: none;" frameborder="0"></iframe>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/html.js" type="text/javascript"></script><div class="csdn-toolbar csdn-toolbar-skin-black ">        <div class="container row center-block ">          <div class="col-md-3 pull-left logo clearfix"><a href="http://www.csdn.net/?ref=toolbar" title="CSDN首页" target="_blank" class="icon"></a><a title="频道首页" href="http://blog.csdn.net/?ref=toolbar_logo" target="_blank" class="img blog-icon"></a></div>          <div class="pull-right login-wrap unlogin">            <ul class="btns">              <li class="loginlink"><a href="https://passport.csdn.net/account/login?ref=toolbar" target="_top">登录&nbsp;</a>|<a target="_top" href="https://passport.csdn.net/account/register?ref=toolbar">&nbsp;注册</a></li>              <li class="search">                <div class="icon on-search-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <form action="http://so.csdn.net/search" method="get" target="_blank">                      <input value="toolbar" name="ref" accesskey="2" type="hidden">                      <div class="border">                        <input placeholder="搜索" name="q" accesskey="2" type="text"><span class="icon-enter-sm"></span>                      </div>                    </form>                  </div>                </div>              </li>              <li class="favor">                <div class="icon on-favor-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div style="display:none;" class="favor-success"><span class="msg">收藏成功</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <div style="display:none;" class="favor-failed"><span class="icon-danger-lg"></span><span class="msg">收藏失败，请重新收藏</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <form role="form" class="form-horizontal favor-form">                      <div class="form-group">                        <div class="clearfix">                          <label for="input-title" class="col-sm-2 control-label">标题</label>                          <div class="col-sm-10">                            <input value="windows下整合UCenter、ECShop、Discus - 为了忘却的专栏 - 博客频道 - CSDN.NET" id="inputTitle" placeholder="" class="title form-control" type="text">                          </div>                        </div>                        <div class="alert alert-danger"><strong></strong>标题不能为空</div>                      </div>                      <div class="form-group">                        <label for="input-url" class="col-sm-2 control-label">网址</label>                        <div class="col-sm-10">                          <input value="http://blog.csdn.net/lwx2615/article/details/6117941" id="input-url" placeholder="" class="url form-control" type="text">                        </div>                      </div>                      <div class="form-group">                        <label for="input-tag" class="col-sm-2 tag control-label">标签</label>                        <div class="col-sm-10">                          <input id="input-tag" class="form-control tag" type="text">                        </div>                      </div>                      <div class="form-group">                        <label for="input-description" class="description col-sm-2 control-label">摘要</label>                        <div class="col-sm-10">                          <textarea id="input-description" class="form-control description"></textarea>                        </div>                      </div>                      <div class="form-group">                        <div class="col-sm-offset-2 col-sm-10 ft">                          <div class="col-sm-4 pull-left">                            <div class="checkbox">                              <label>                                <input name="share" checked="checked" class="share" type="checkbox">公开                              </label>                            </div>                          </div>                          <div class="col-sm-8 pull-right favor-btns">                            <button type="button" class="cancel btn btn-default">取消</button>                            <button type="submit" class="submit btn btn-primary">收藏</button>                          </div>                        </div>                      </div>                    </form>                  </div>                </div>              </li>              <li class="notify">                <div style="display:none" class="number"></div>                <div style="display:none" class="icon-hasnotes-sm"></div>                <div id="header_notice_num"></div>                <div class="icon on-notify-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div id="note1" class="csdn_note">                      <div class="box"></div>                    <iframe src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/a.htm" allowtransparency="true" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent" frameborder="0"></iframe></div>                  </div>                </div>              </li>              <li class="ugc">                <div class="icon on-ugc-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <dl>                      <dt><a href="http://geek.csdn.net/news/expert?ref=toolbar" target="_blank" class="p-news clearfix"><em class="icon"></em><span>分享资讯</span></a></dt>                      <dt><a href="http://share.csdn.net/slides/new?ref=toolbar" target="_blank" class="p-doc clearfix"><em class="icon"></em><span>传PPT/文档</span></a></dt>                      <dt><a href="http://bbs.csdn.net/topics/new?ref=toolbar" target="_blank" class="p-ask clearfix"><em class="icon"></em><span>提问题</span></a></dt>                      <dt><a href="http://write.blog.csdn.net/postedit?ref=toolbar" target="_blank" class="p-blog clearfix"><em class="icon"></em><span>写博客</span></a></dt>                      <dt><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-src clearfix"><em class="icon"></em><span>传资源</span></a></dt>                      <dt><a href="https://code.csdn.net/projects/new?ref=toolbar" target="_blank" class="c-obj clearfix"><em class="icon"></em><span>创建项目</span></a></dt>                      <dt><a href="https://code.csdn.net/snippets/new?ref=toolbar" target="_blank" class="c-code clearfix"><em class="icon"></em><span>创建代码片</span></a></dt>                    </dl>                  </div>                </div>              </li>              <li class="profile">                <div class="icon on-profile-icon"><img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/100x100.jpg" class="curr-icon-img">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div class="bd">                      <dl class="clearfix">                        <dt class="pull-left img"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="avatar"><img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/100x100.jpg"></a></dt>                        <dd class="info"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="nickname"></a><a class="set-nick" href="https://passport.csdn.net/account/profile">设置昵称<span class="write-icon"></span></a><span class="dec"><a class="fill-dec" href="http://my.csdn.net/" target="_blank">编辑自我介绍，让更多人了解你<span class="write-icon"></span></a></span></dd>                      </dl>                    </div>                    <div class="ft clearfix"><a target="_blank" href="http://my.csdn.net/my/account/changepwd?ref=toolbar" class="pull-left"><span class="icon-cog"></span>帐号设置</a><a href="https://passport.csdn.net/account/logout?ref=toolbar" target="_top" class="pull-right "><span class="icon-signout"></span><span class="out">退出</span></a></div>                  </div>                </div>              </li>              <li class="apps">                <div class="icon on-apps-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>社区</h5>                      </dt>                      <dd> <a href="http://blog.csdn.net/?ref=toolbar" target="_blank">博客</a></dd>                      <dd> <a href="http://bbs.csdn.net/?ref=toolbar" target="_blank">论坛</a></dd>                      <dd> <a href="http://download.csdn.net/?ref=toolbar" target="_blank">下载</a></dd>                      <dd><a href="http://ask.csdn.net/?ref=toolbar" target="_blank">技术问答</a></dd>                      <dd><a href="http://geek.csdn.net/?ref=toolbar" target="_blank">极客头条</a></dd>                    </dl>                  </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>服务</h5>                      </dt>                      <dd> <a href="https://code.csdn.net/?ref=toolbar" target="_blank">CODE</a></dd>                      <dd> <a href="http://hero.csdn.net/?ref=toolbar" target="_blank">英雄会</a></dd>                      <dd> <a href="http://huiyi.csdn.net/?ref=toolbar" target="_blank">活动</a></dd>                      <dd> <a href="http://www.csto.com/?ref=toolbar" target="_blank">CSTO</a></dd>                    </dl>                  </div>                  <div class="detail last">                    <dl>                      <dt>                        <h5>俱乐部</h5>                      </dt>                      <dd> <a href="http://cto.csdn.net/?ref=toolbar" target="_blank">CTO俱乐部</a></dd>                      <dd> <a href="http://student.csdn.net/?ref=toolbar" target="_blank">高校俱乐部</a></dd>                    </dl>                  </div>                </div>              </div>            </li>            </ul>          </div>        </div>    </div>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/lwx2615">为了忘却的专栏</a></h2>
+            <h3>一路走来，记录自己的点点滴滴</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+                <li id="btnContents"><a href="http://blog.csdn.net/lwx2615?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/lwx2615?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/lwx2615/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "lwx2615";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/lwx2615";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod="popu_3"> 
+
+<a href="http://bbs.csdn.net/topics/390812950?page=5#post-398523062" target="_blank">
+<font color="blue">博客专家福利
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a target="_blank" href="http://bbs.csdn.net/topics/390936728">
+<font color="red">C币兑换礼品剧透</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a target="_blank" href="http://blog.csdn.net/blogdevteam/article/details/41079173">
+<font color="blue">10月推荐文章汇总
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a target="_blank" href="http://blog.csdn.net/csdnproduct/article/details/41649453">
+<font color="red">关于11月28日CSDN遭受网络攻击的情况说明
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+</div>                        </div>
+                        
+
+  
+<link href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/comment1.css" type="text/css" rel="stylesheet">
+<link href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style1.css" type="text/css" rel="stylesheet">
+<script language="JavaScript" type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/jquery_002.js"></script>
+<script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/main.js"></script>
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="http://blog.csdn.net/lwx2615/article/details/6117941">
+        windows下整合UCenter、ECShop、Discus
+        </a></span>
+    </h1>
+</div>
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="http://blog.csdn.net/lwx2615/article/category/676358" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">为了忘却</a> 
+        </span>
+    <span class="link_postdate">2011-01-05 14:42</span>
+    <span class="link_view" title="阅读次数">1871人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(0)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shoucang']);collectArticle('windows下整合UCenter、ECShop、Discus','6117941');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report" onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_jubao']);report(6117941,2);return false;" title="举报">举报</a></span>
+    
+</div>
+<div class="tag2box"><a href="http://www.csdn.net/tag/windows" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">windows</a><a href="http://www.csdn.net/tag/phpmyadmin" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">phpmyadmin</a><a href="http://www.csdn.net/tag/upload" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">upload</a><a href="http://www.csdn.net/tag/%e6%95%b0%e6%8d%ae%e5%ba%93" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">数据库</a><a href="http://www.csdn.net/tag/%e6%b5%8f%e8%a7%88%e5%99%a8" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">浏览器</a><a href="http://www.csdn.net/tag/mysql" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">mysql</a></div>
+
+  
+    
+<div id="article_content" class="article_content">
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">安装环境：</span><span style="mso-bidi-font-size: 10.5pt;" lang="EN-US"><span style="font-family: Times New Roman;">windows</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><strong><span lang="EN-US"><a href="http://www.wampserver.com/download.php"><span style="font-size: small; font-family: Times New Roman;">WampServer 2.1c [28/12/10]</span></a></span></strong><span lang="EN-US"><br><span style="font-size: small; font-family: Times New Roman;">&nbsp;Inclus :<br>&nbsp;- Apache 2.2.17<br>&nbsp;- Php 5.3.4 (version 64 bits)<br>&nbsp;- Php 5.3.3 (version 32 bits)<br>&nbsp;- Mysql 5.1.53 (version 64 bits)<br>&nbsp;- Mysql 5.5.8 (version 32 bits)<br>&nbsp;- XDebug 2.1.0-5.3-vc6 (32 bits)<br>&nbsp;- XDebug 2.1.0-5.3-vc9 (64 bits)<br>&nbsp;- XDC 1.5<br>&nbsp;- PhpMyadmin 3.2.0.1<br>&nbsp;- SQLBuddy 1.3.2<br>&nbsp;- webGrind 1.0</span></span><span style="mso-bidi-font-size: 10.5pt;" lang="EN-US"></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt; text-indent: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 18.0pt;"><span style="mso-bidi-font-size: 10.5pt; mso-fareast-font-family: 'Times New Roman';" lang="EN-US"><span style="mso-list: Ignore;"><span style="font-family: Times New Roman;"><span style="font-size: small;">1.</span><span style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span><span style="font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';"><span style="font-size: small;">下载</span></span><span style="font-size: small;"><span style="mso-bidi-font-size: 10.5pt;" lang="EN-US"><span style="font-family: Times New Roman;">UCenter<br></span></span><span style="font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">下载<span class="ttag">地址</span>：</span><span style="mso-bidi-font-size: 10.5pt;" lang="EN-US"><a href="http://www.comsenz.com/downloads/install" target="_blank"><span style="color: #0099cc; text-decoration: none; text-underline: none;"><span style="font-family: Times New Roman;">http://www.comsenz.com/downloads/install</span></span></a></span><span style="font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">。选择的是</span><span style="mso-bidi-font-size: 10.5pt;" lang="EN-US"><span style="font-family: Times New Roman;">UTF-8</span></span><span style="font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">的</span><span style="mso-bidi-font-size: 10.5pt;" lang="EN-US"></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt; text-indent: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 18.0pt;"><span style="mso-fareast-font-family: 'Times New Roman';" lang="EN-US"><span style="mso-list: Ignore;"><span style="font-family: Times New Roman;"><span style="font-size: small;">2.</span><span style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span><span style="font-size: small;"><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">解压</span><span lang="EN-US"><span style="font-family: Times New Roman;">UCenter_1.5.2_SC_UTF8</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">文件，可以直接将</span><span lang="EN-US"><span style="font-family: Times New Roman;">upload</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">文件夹直接复制到项目的文件夹里。当然项目要布置到服务器上。</span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt; text-indent: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 18.0pt;"><span style="mso-fareast-font-family: 'Times New Roman';" lang="EN-US"><span style="mso-list: Ignore;"><span style="font-family: Times New Roman;"><span style="font-size: small;">3.</span><span style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span><span style="font-size: small;"><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">安装</span><span lang="EN-US"><span style="font-family: Times New Roman;">UCenter</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt;"><span style="font-size: small;"><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">打开</span><span lang="EN-US"><span style="font-family: Times New Roman;">phpmyadmin</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">的服务，在浏览器上输入</span><span lang="EN-US"><a href="http://localhost/upload/install"><span style="font-family: Times New Roman;">http://localhost/upload/install</span></a><span style="font-family: Times New Roman;"> </span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">然后就出现一个安装向导，在填写数据库名时，由于前面</span><span lang="EN-US"><span style="font-family: Times New Roman;">phpmyadmin</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">在</span><span lang="EN-US"><span style="font-family: Times New Roman;">xp</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">下安装的有一点问题，数据库名还是写的</span><span lang="EN-US"><span style="font-family: Times New Roman;">root </span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">密码填空。一路到最后就安装好了。完成之后需要将安装文件删除，及删除</span><span lang="EN-US"><span style="font-family: Times New Roman;">intall</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">文件夹。（本次安装后，部分文件夹会报错，页面还是可以出来，尝试着改了一下，没有出现问题）</span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt; text-indent: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 18.0pt;"><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt; mso-fareast-font-family: 'Tahoma,Arial,Courier'; mso-bidi-font-family: 'Tahoma,Arial,Courier';" lang="EN-US"><span style="mso-list: Ignore;"><span style="font-size: small;">4.</span><span style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></strong><span style="font-size: small;"><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">下载</span><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt;" lang="EN-US">ECSHOP</span></strong><strong><span style="color: black; font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Tahoma,Arial,Courier'; mso-hansi-font-family: 'Tahoma,Arial,Courier';">软件包</span></strong><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt;" lang="EN-US"></span></strong></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt;"><span style="font-size: small;"><span style="font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">下载<span class="ttag">地址</span>：</span><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt;" lang="EN-US"><a href="http://www.ecshop.com/" target="_blank">http://www.ecshop.com</a> </span><span style="font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">。选择的是</span><span style="mso-bidi-font-size: 10.5pt;" lang="EN-US"><span style="font-family: Times New Roman;">UTF-8</span></span><span style="font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">的<img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/0_1294209425FD4M.gif" alt=""></span><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt;" lang="EN-US"></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt; text-indent: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 18.0pt;"><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt; mso-fareast-font-family: 'Tahoma,Arial,Courier'; mso-bidi-font-family: 'Tahoma,Arial,Courier';" lang="EN-US"><span style="mso-list: Ignore;"><span style="font-size: small;">5.</span><span style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></strong><span style="font-size: small;"><strong><span style="color: black; font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Tahoma,Arial,Courier'; mso-hansi-font-family: 'Tahoma,Arial,Courier';">解压缩</span></strong><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt;" lang="EN-US">ECSHOP</span></strong><strong><span style="color: black; font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Tahoma,Arial,Courier'; mso-hansi-font-family: 'Tahoma,Arial,Courier';">软件包，将</span></strong><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt;" lang="EN-US">ECShop_V2.7.2_UTF8_Release0604</span></strong><strong><span style="color: black; font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Tahoma,Arial,Courier'; mso-hansi-font-family: 'Tahoma,Arial,Courier';">解压，在项目里新建一个文件夹</span></strong><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt;" lang="EN-US">ecshop</span></strong><strong><span style="color: black; font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Tahoma,Arial,Courier'; mso-hansi-font-family: 'Tahoma,Arial,Courier';">，将</span></strong><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt;" lang="EN-US">upload</span></strong><strong><span style="color: black; font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Tahoma,Arial,Courier'; mso-hansi-font-family: 'Tahoma,Arial,Courier';">文件夹下的文件复制到新建的</span></strong><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt;" lang="EN-US">ecshop</span></strong><strong><span style="color: black; font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Tahoma,Arial,Courier'; mso-hansi-font-family: 'Tahoma,Arial,Courier';">文件夹下。</span></strong></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt; text-indent: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 18.0pt;"><span style="font-size: small;"><strong><span style="color: black; font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Tahoma,Arial,Courier'; mso-hansi-font-family: 'Tahoma,Arial,Courier';"><img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/0_1294209443BemW.gif" alt=""></span></strong><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt;" lang="EN-US"></span></strong></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt; text-indent: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 18.0pt;"><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt; mso-fareast-font-family: 'Tahoma,Arial,Courier'; mso-bidi-font-family: 'Tahoma,Arial,Courier';" lang="EN-US"><span style="mso-list: Ignore;"><span style="font-size: small;">6.</span><span style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></strong><span style="font-size: small;"><strong><span style="color: black; font-family: 宋体; mso-bidi-font-size: 10.5pt; mso-ascii-font-family: 'Tahoma,Arial,Courier'; mso-hansi-font-family: 'Tahoma,Arial,Courier';">安装</span></strong><strong><span style="color: black; font-family: Tahoma,Arial,Courier; mso-bidi-font-size: 10.5pt;" lang="EN-US">ecshop</span></strong></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt;"><span style="font-size: small;"><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">打开</span><span lang="EN-US"><span style="font-family: Times New Roman;">phpmyadmin</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">的服务，在浏览器上输入</span><span lang="EN-US"><a href="http://localhost/ecshop/install"><span style="font-family: Times New Roman;">http://localhost/ecshop/install</span></a><span style="font-family: Times New Roman;"> </span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">然后就出现一个安装向导，跟着一路下来，能够登陆进去就安装成功了。成功后也要把里面的</span><span lang="EN-US"><span style="font-family: Times New Roman;">install</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">安装文件删除。<img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/0_129420946386vA.gif" alt=""></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt; text-indent: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 18.0pt;"><span style="mso-fareast-font-family: 'Times New Roman';" lang="EN-US"><span style="mso-list: Ignore;"><span style="font-family: Times New Roman;"><span style="font-size: small;">7.</span><span style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span><span style="font-size: small;"><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">整合</span><span lang="EN-US"><span style="font-family: Times New Roman;">uCenter</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">。</span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt;"><span style="font-size: small;"><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">整合之前，将</span><span lang="EN-US"><span style="font-family: Times New Roman;">UCenter_1.5.2_SC_UTF8 /advanced</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">文件的</span><span lang="EN-US"><span style="font-family: Times New Roman;">uc_client</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">文件复制到</span><span lang="EN-US"><span style="font-family: Times New Roman;">ecshop</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">文件夹下。登录</span><span lang="EN-US"><span style="font-family: Times New Roman;">ecshop</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">，</span><span lang="EN-US"><a href="http://localhost/ecshop/admin/"><span style="font-family: Times New Roman;">http://localhost/ecshop/admin/</span></a><span style="font-family: Times New Roman;"> </span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">找到菜单</span><span lang="EN-US"><span style="font-family: Times New Roman;">&gt;</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">会员管理</span><span lang="EN-US"><span style="font-family: Times New Roman;">&gt;</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">会员整合，找到</span><span lang="EN-US"><span style="font-family: Times New Roman;">UCenter</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">，点安装。</span><span lang="EN-US"><span style="font-family: Times New Roman;">URL</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">填</span><span lang="EN-US"><span style="font-family: Times New Roman;">UCenter</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">的目录</span><span lang="EN-US"><a href="http://localhost/upload"><span style="font-family: Times New Roman;">http://localhost/upload</span></a><span style="font-family: Times New Roman;"> </span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">。然后跟着向导一路下去。成功后会有提示。打开</span><span lang="EN-US"><span style="font-family: Times New Roman;">UCenter</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">的界面，会发现数据库里的数据多了几条。那是</span><span lang="EN-US"><span style="font-family: Times New Roman;">ecshop</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">的数据整合到</span><span lang="EN-US"><span style="font-family: Times New Roman;">ucenter</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">上了。<img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/0_12942094763g66.gif" alt=""><img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/0_1294209443BemW.gif" alt=""></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt; text-indent: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 18.0pt;"><span style="mso-fareast-font-family: 'Times New Roman';" lang="EN-US"><span style="mso-list: Ignore;"><span style="font-family: Times New Roman;"><span style="font-size: small;">8.</span><span style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span><span style="font-size: small;"><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">整合</span><span lang="EN-US"><span style="font-family: Times New Roman;">discuz</span></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt;"><span style="font-size: small;"><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">下载</span><span lang="EN-US"><span style="font-family: Times New Roman;">Discuz_X1.5_SC_UTF8 </span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">，地址：</span><span lang="EN-US"><a href="http://download.comsenz.com/DiscuzX/"><span style="font-family: Times New Roman;">http://download.comsenz.com/DiscuzX/</span></a><span style="font-family: Times New Roman;"> </span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">，将</span><span lang="EN-US"><span style="font-family: Times New Roman;">upload</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">文件夹下的内容复制到项目里的</span><span lang="EN-US"><span style="font-family: Times New Roman;">discuz</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">文件夹里，可以像上面一样安装，也可以登录</span><span lang="EN-US"><span style="font-family: Times New Roman;">UCenter</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">用户管理中心</span><span lang="EN-US"><span style="font-family: Times New Roman;">&gt;</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">应用管理，添加新的应用，</span><span lang="EN-US"><span style="font-family: Times New Roman;">url</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">也是和上面的一样，到</span><span lang="EN-US"><span style="font-family: Times New Roman;">install</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">文件。安装完后也应把</span><span lang="EN-US"><span style="font-family: Times New Roman;">install</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">文件删除。<img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/0_12942094330370.gif" alt=""><img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/0_1294209454lJFg.gif" alt=""></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt;"><span lang="EN-US"><span style="font-size: small; font-family: Times New Roman;">&nbsp;</span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 18pt;"><span style="font-size: small;"><span lang="EN-US"><span style="mso-spacerun: yes;"><span style="font-family: Times New Roman;">&nbsp; </span></span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">这样整合之后，所有的数据库都交到</span><span lang="EN-US"><span style="font-family: Times New Roman;">UCenter</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">来管理。打开各自的页面就能够进行丰富的设置。</span></span></p>
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+<div data-bd-bind="1417446557995" class="bdsharebuttonbox bdshare-button-style0-16" style="float: right;">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博" style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网" style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信" style="background-position:0 -1612px !important"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+<!--192.168.100.33-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/lwx2615/article/details/6111948';">上一篇</span><a href="http://blog.csdn.net/lwx2615/article/details/6111948" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">有关服务器拒绝phpMyAdmin连接的问题（已解决！）</a></li>
+            <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/lwx2615/article/details/6123937';">下一篇</span><a href="http://blog.csdn.net/lwx2615/article/details/6123937" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">ssh下JUnit测试及相关hql语句的一点记录</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/bds_s_v2.js" type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434"></script>
+
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+
+</div>
+      <dl class="blog-associat-tag">
+        <dt>主题推荐</dt>
+        <dd>
+                <a href="http://www.csdn.net/tag/windows" target="_blank" class="blog-tage-red">windows</a> 
+                <a href="http://www.csdn.net/tag/ecshop" target="_blank" class="blog-tage-red">ecshop</a> 
+                <a href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" class="blog-tage-red">数据库</a> 
+                <a href="http://www.csdn.net/tag/%E6%B5%8F%E8%A7%88%E5%99%A8" target="_blank" class="blog-tage-red">浏览器</a> 
+                <a href="http://www.csdn.net/tag/%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" class="blog-tage-red">服务器</a> 
+        </dd>
+    </dl> 
+
+
+<dl class="blog-ass-articl tracking-ad" data-mod="popu_36" id="res-relatived"> 
+     <dt><span>猜你在找</span></dt>    
+<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/shrimpma/article/details/9816035" title="PHP实现图片下载功能，浏览器直接保存" strategy="CFRecommendAlgorithm">PHP实现图片下载功能，浏览器直接保存</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/zhichao2001/article/details/5031447" title="Ucenter 会员同步登录通讯原理" strategy="CFRecommendAlgorithm">Ucenter 会员同步登录通讯原理</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/21aspnet/article/details/7635575" title="ecshop中ajax的调用原理" strategy="CFRecommendAlgorithm">ecshop中ajax的调用原理</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/poly_sunny/article/details/9070321" title="ECSHOP用户名已经存在的解决方法" strategy="CFRecommendAlgorithm">ECSHOP用户名已经存在的解决方法</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/bjash/article/details/8810660" title="(转)基于PhoneGap与Java开发的Android应用的性能对比" strategy="CFRecommendAlgorithm">(转)基于PhoneGap与Java开发的Android应用的性能对比</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/wd792105247/article/details/19124933" title="JavaWeb集成百度UMEditor详细操作(实现上传图片)+demo源码" strategy="CFRecommendAlgorithm">JavaWeb集成百度UMEditor详细操作(实现上传图片)+demo源码</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/dyllove98/article/details/9722839" title="CSS从大图片上截取小图标的操作" strategy="CFRecommendAlgorithm">CSS从大图片上截取小图标的操作</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/Marcky/article/details/6025651" title="Nginx源码分析-事件循环" strategy="CFRecommendAlgorithm">Nginx源码分析-事件循环</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/u010139093/article/details/37874475" title="ECshop核心代码" strategy="CFRecommendAlgorithm">ECshop核心代码</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a target="_blank" href="http://blog.csdn.net/spy19881201/article/details/12031627" title="RequireJS总体概览" strategy="CFRecommendAlgorithm">RequireJS总体概览</a></dd></dl>
+
+<script type="text/javascript">
+    var searchtitletags = 'windows下整合UCenter、ECShop、Discus' + ',' + 'windows,ecshop,数据库,浏览器,服务器';
+    searchService({
+        index: 'blog',
+        query: searchtitletags,
+        from: 10,
+        size: 10,
+        appendTo: '#res-relatived',
+        url: 'recommend',
+        his: 2,
+        client: "blog_cf_enhance",
+        tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+    });
+
+ </script>   
+
+
+    <div id="ad_cen">
+   
+          <script type="text/javascript">
+              new Ad(4, 'ad_cen');
+          </script>
+    </div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list"><br>&nbsp;&nbsp;暂无评论<br><br><div class="clear"></div></div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form"><div class="guest_link">您还没有登录,请<a href="javascript:void(0);" onclick="javascript:csdn.showLogin(function (dat) {js_logined(dat.data.userName);});">[登录]</a>或<a href="http://passport.csdn.net/account/register?from=http%3A%2F%2Fblog.csdn.net%2Flwx2615%2Farticle%2Fdetails%2F6117941">[注册]</a></div></div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '6117941';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+    <script type="text/javascript">
+    new Ad(5, 'ad_bot');
+    </script>
+<div id="report_dialog">
+</div>
+
+<div id="d-top" style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop" style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])">         
+         <img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);
+        
+        /*
+        if($("#comment_content").length>0)
+        {
+            $("#quick-reply").show();
+
+            $("#quick-reply").click(function(){
+                setEditorFocus();
+            });
+        }       
+     
+        var d_top = $('#d-top-a');
+
+        document.onscroll = function ()
+        {
+            var scrTop = (document.body.scrollTop || document.documentElement.scrollTop);
+            if (scrTop > 500)
+            {
+                d_top.show();
+            } else
+            {
+                d_top.hide();
+            }
+        }
+        $('#d-top-a').click(function ()
+        {
+            scrollTo(0, 0);
+            this.blur();
+            return false;
+        });
+        */
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+<div class="tag_list">
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_blank">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_blank" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_blank" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_blank" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_blank" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_blank" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_blank" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_blank" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_blank" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_blank" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_blank" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_blank" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_blank" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_blank" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_blank" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_blank" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_blank" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_blank" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_blank" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_blank" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_blank" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_blank" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_blank" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_blank" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_blank" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_blank" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_blank" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_blank" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_blank" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_blank" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_blank" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_blank" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_blank" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_blank" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_blank" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_blank" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_blank" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_blank" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_blank" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_blank" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_blank" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_blank" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_blank" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_blank" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_blank" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_blank" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone" target="_blank" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_blank" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/%E4%BA%91%E8%AE%A1%E7%AE%97" target="_blank" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_blank" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace" target="_blank" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_blank" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_blank" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_blank" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_blank" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE" target="_blank" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_blank" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_blank" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_blank" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_blank" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_blank" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_blank" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_blank" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_blank" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_blank" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_blank" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_blank" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_blank" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_blank" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_blank" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_blank" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+</div>
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }    
+
+</script>
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+            <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/lwx2615" target="_blank">
+    <img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/1_lwx2615.jpg" title="访问我的空间" style="max-width:90%">
+    </a>
+    <br>
+    <span><a href="http://my.csdn.net/lwx2615" class="user_name" target="_blank">lwx2615</a></span>
+</div>
+<div class="interact">
+<a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_guanzhu'])"></a>
+
+ <a href="javascript:void(0);" class="letter" title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=lwx2615','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>114560次</span></li>
+    <li>积分：<span>2229</span> </li>    
+    <li>等级： <span style="position:relative;display:inline-block;z-index:1">
+            <img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/blog5.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：2229 </div>
+        </span>  </li>
+    <li>排名：<span>第6378名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>100篇</span></li>
+    <li>转载：<span>15篇</span></li>
+    <li>译文：<span>13篇</span></li>
+    <li>评论：<span>34条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" class="blogsearch" title="请输入关键字" type="text"></span>
+        <input id="btnSubmit" value="搜索" title="search in blog" type="button">
+        <input name="q" id="inputQ" type="hidden">
+        <input name="t" value="blog" type="hidden">
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script>
+<div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">
+             <li>
+                <a href="http://blog.csdn.net/lwx2615/article/category/667436" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Java</a><span>(3)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/lwx2615/article/category/819221" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">php</a><span>(12)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/lwx2615/article/category/676358" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">为了忘却</a><span>(115)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/lwx2615/article/category/667437" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">其他</a><span>(17)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/lwx2615/article/category/2180775" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">mysql</a><span>(1)</span>
+            </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list"><li><a href="http://blog.csdn.net/lwx2615/article/month/2014/10">2014年10月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2014/07">2014年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2014/04">2014年04月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2014/03">2014年03月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2014/02">2014年02月</a><span>(1)</span></li><span class="hidelist" style="display:none;"><li><a href="http://blog.csdn.net/lwx2615/article/month/2014/01">2014年01月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2013/12">2013年12月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2013/09">2013年09月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2013/08">2013年08月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2013/07">2013年07月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2013/06">2013年06月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2013/05">2013年05月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2013/04">2013年04月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2013/03">2013年03月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2013/02">2013年02月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2013/01">2013年01月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2012/12">2012年12月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2012/11">2012年11月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2012/10">2012年10月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2012/09">2012年09月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2012/08">2012年08月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2012/07">2012年07月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2012/06">2012年06月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2012/05">2012年05月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2012/04">2012年04月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2012/03">2012年03月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2011/11">2011年11月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2011/10">2011年10月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2011/09">2011年09月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2011/08">2011年08月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2011/07">2011年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2011/06">2011年06月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2011/05">2011年05月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2011/04">2011年04月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2011/02">2011年02月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2011/01">2011年01月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2010/12">2010年12月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2010/11">2010年11月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2010/10">2010年10月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2010/08">2010年08月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2010/06">2010年06月</a><span>(7)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2010/05">2010年05月</a><span>(7)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2010/04">2010年04月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/lwx2615/article/month/2010/03">2010年03月</a><span>(2)</span></li></span><div id="archive_list_button" class="list_closed">展开</div></div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6817071" title="ucenter同步问题（整合iwebshop或者thinkphp）">ucenter同步问题（整合iwebshop或者thinkphp）</a><span>(5980)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/5624388" title="EhCache配置文件">EhCache配置文件</a><span>(5450)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6124125" title="我的ZenTao禅道的安装(windows和linux下都试过)">我的ZenTao禅道的安装(windows和linux下都试过)</a><span>(5019)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/5662787" title="Linux下配置eclipse桌面快捷方式">Linux下配置eclipse桌面快捷方式</a><span>(4748)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/7421598" title="配置nginx的403错误页面跳转">配置nginx的403错误页面跳转</a><span>(3762)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6040094" title="有关linux下php创建目录权限问题 ">有关linux下php创建目录权限问题 </a><span>(3719)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6939641" title="html文件中flash格式（flv、swf）文件的嵌入">html文件中flash格式（flv、swf）文件的嵌入</a><span>(3322)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6040072" title="Svn的错误：svn中有某些文件上传不上去">Svn的错误：svn中有某些文件上传不上去</a><span>(3046)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6111948" title="有关服务器拒绝phpMyAdmin连接的问题（已解决！）">有关服务器拒绝phpMyAdmin连接的问题（已解决！）</a><span>(2839)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6321996" title=" Ubuntu 服务器手动分区"> Ubuntu 服务器手动分区</a><span>(2533)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6817071" title="ucenter同步问题（整合iwebshop或者thinkphp）">ucenter同步问题（整合iwebshop或者thinkphp）</a><span>(14)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/7397855" title="mantisbt的安装与配置">mantisbt的安装与配置</a><span>(5)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6040072" title="Svn的错误：svn中有某些文件上传不上去">Svn的错误：svn中有某些文件上传不上去</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/9833577" title="百度地图搜索、标注地图示例">百度地图搜索、标注地图示例</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6528043" title="有关ajax的一个小错误">有关ajax的一个小错误</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6124125" title="我的ZenTao禅道的安装(windows和linux下都试过)">我的ZenTao禅道的安装(windows和linux下都试过)</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/5523406" title="Bugfree （Apache php MySQL）的安装">Bugfree （Apache php MySQL）的安装</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/6043793" title="ajaxsubmit提交到action时弹出对话框的问题（有待进一步的解决）">ajaxsubmit提交到action时弹出对话框的问题（有待进一步的解决）</a><span>(2)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/7594277" title="安装nginx、php、mysql、MogileFS等需要安装的依赖库和工具包">安装nginx、php、mysql、MogileFS等需要安装的依赖库和工具包</a><span>(1)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/lwx2615/article/details/5568879" title="eclipse装上maven后老是报一个找不到jdk的错误">eclipse装上maven后老是报一个找不到jdk的错误</a><span>(1)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend"></ul>
+</div>
+<script type="text/javascript">
+ new Ad(12, 'ad_commend');
+</script><div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="http://blog.csdn.net/lwx2615/article/details/6817071#comments">ucenter同步问题（整合iwebshop或者thinkphp）</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/qq_18652587" class="user_name">qq_18652587</a>:
+您好，按照你的文章，我成功与ucenter通信成功了，但在做同步的时候遇到了麻烦，在前端解析uc_u...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/lwx2615/article/details/6817071#comments">ucenter同步问题（整合iwebshop或者thinkphp）</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/lwx2615" class="user_name">lwx2615</a>:
+@u012951158:可以加群：397097631   讨论
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/lwx2615/article/details/6817071#comments">ucenter同步问题（整合iwebshop或者thinkphp）</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u012951158" class="user_name">南方网通</a>:
+跪求教本地网站与Ucenter的整合啊，老是通讯失败 弄了2天了，查了N多资料还是不行，哭的感觉都有...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/lwx2615/article/details/6817071#comments">ucenter同步问题（整合iwebshop或者thinkphp）</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u012951158" class="user_name">南方网通</a>:
+跪求教本地网站与Ucenter的整合啊，弄了2天了，查了N多资料还是不行，哭的感觉都有，跪求指教啊，...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/lwx2615/article/details/6124016#comments">通过HQL来进行批量操作</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/FansUnion" class="user_name">FansUnion</a>:
+排版有点乱。String hql = "update DataResource set isSync...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/lwx2615/article/details/6124016#comments">ucenter同步问题（整合iwebshop或者thinkphp）</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/lwx2615" class="user_name">lwx2615</a>:
+@DaDuHei:你可以先把遇到的问题贴出来。还没有动手做就开始求助不是一个很好的学习方法！
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/lwx2615/article/details/6124016#comments">ucenter同步问题（整合iwebshop或者thinkphp）</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/DaDuHei" class="user_name">大肚嘿</a>:
+麻烦指导下 thinkphp 跟 ucenter的同步   QQ243303578
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/lwx2615/article/details/9833577#comments">百度地图搜索、标注地图示例</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/lwx2615" class="user_name">lwx2615</a>:
+@u011675110:就在这里联系吧 其他方式有限制。关于这个同步问题 我已经把我自己做的经验都写...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/lwx2615/article/details/9833577#comments">百度地图搜索、标注地图示例</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u011675110" class="user_name">Mrjoy</a>:
+怎么联系你， 有thinkphp 与DZ同步的问题需求您协助处理下?
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/lwx2615/article/details/9833577#comments">ucenter同步问题（整合iwebshop或者thinkphp）</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/lwx2615" class="user_name">lwx2615</a>:
+@kkdaren:觉得你应该从配置文件方面去检查，数据库，密钥，以及应用ID等等不正确都可能导致通信...
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/cnick.js"></script>
+<script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/newblog.js"></script>
+
+
+<script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/showblogmedal.js"></script>
+<script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/JavaScript1.js"></script><link rel="stylesheet" type="text/css" href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/pub_footer_2014.css"><div class="pub_fo"><div id="pub_footerall" class="pub_footer_new"><dl><dt></dt> <dd class="foot_sub_menu"><a href="http://www.csdn.net/company/about.html" target="_blank">公司简介</a><span>|</span><a href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</a><span>|</span><a href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</a><span>|</span><a href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</a><span>|</span><a href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</a><span>|</span><a href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</a><span>|</span><a href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</a><span>|</span><a href="mailto:webmaster@csdn.net">问题报告</a><span>|</span><a target="_blank" href="http://www.csdn.net/friendlink.html">合作伙伴</a><span>|</span><a href="http://bbs.csdn.net/forums/Service" target="_blank">论坛反馈</a></dd><dd class="foot_contact"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2355263776&amp;site=qq&amp;menu=yes" target="_blank" class="qq">网站客服</a><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2251809102&amp;site=qq&amp;menu=yes" target="_blank" class="qq">杂志客服</a><a href="http://e.weibo.com/csdnsupport/profile" target="_blank" class="weibo">微博客服</a><a href="mailto:webmaster@csdn.net" class="email" title="联系邮箱">webmaster@csdn.net</a><span class="phone" title="服务热线">400-600-2320</span><span class="interval">|</span><span>北京创新乐知信息技术有限公司 版权所有</span><span class="interval">|</span><span>江苏乐知网络技术有限公司 提供商务支持</span></dd><dd class="foot_copyright"><span>京&nbsp;ICP&nbsp;证&nbsp;070598&nbsp;号</span><span class="interval">|</span><span>Copyright © 1999-2014, CSDN.NET, All Rights Reserved&nbsp;</span><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div></div><div id="note1" class="csdn_note" style="display:none; position:absolute; z-index:9999; width:440px">  <span class="notice_top_arrow"><span class="inner"></span></span>  <div class="box"></div></div><div class="csdn_notice_tip" style="display:none; position:absolute; z-index:9990; width:170px">  <iframe src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/a_002.htm" scrolling="no" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent" frameborder="0"></iframe>  <div class="tip_text">您有<strong>0</strong>条新通知</div>  <a href="javascript:void%200" class="close2"></a></div><script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/notify.js"></script>
+
+    <script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script><img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/pv.txt" height="0" width="0" border="0">
+<script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/counter.js"></script><script type="text/javascript" charset="UTF-8" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/msg.js"></script>
+<script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad-blog.js"></script>
+<script type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/count.js"></script><iframe src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/logs.htm" frameborder="0" height="0" width="0"></iframe>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/toolbar.js"></script>
+     <!--new top-->
+   
+    <link href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ask_float_block.css" type="text/css" rel="stylesheet">
+    <script language="JavaScript" type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/wmd.js"></script>
+    <script language="JavaScript" type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/showdown.js"></script>
+    <script language="JavaScript" type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/prettify.js"></script>
+    <script language="JavaScript" type="text/javascript" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ask_float_block.js"></script>
+
+
+
+<div style="display: block;" id="tag-suggest-pop">
+  <div class="relative">
+    <div class="close"></div>
+    <div class="content"><div><span>更多相关资源：</span><a href="http://www.csdn.net/tag/ecshop" title="关于 ecshop 的主题" target="_blank">ecshop</a><a href="http://www.csdn.net/tag/%E9%80%9A%E4%BF%A1" title="关于 通信 的主题" target="_blank">通信</a></div></div>
+  </div>
+</div><div data-mod="popu_64" class="tracking-ad" chg-blk="0"><a id="com-ask-float-block" title="提问按钮" style="top:320px"></a><a id="com-quick-reply" title="快速回复" style="top:361px"></a><a id="com-d-top-a" style="top: 402px; display: block;" title="返回顶部" onclick=""></a> </div><div class="pop_edit ask_first comm_ask_first" style="display: none;"><h3>提问</h3><a href="#" nodetype="close" class="close">×</a> <div class="context"> <form id="form" nodetype="form-popup" class="form"><div class="askFirst_desc"><span class="afd_p">CSDN 问答是一个真诚、认真、有活力的技术社区。</span><br><span class="afd_p">我们很愿意帮助您，希望您提出的每一个问题都能得到解答，同时也希望您知道，一个好的问题</span><br><span class="afd_p">更容易得到好的答案<span>&nbsp;&nbsp;</span><a href="http://ask.csdn.net/help?#rule12" target="_blank">怎样提出一个好的问题？</a></span><br><span class="afd_p">提问时应遵循认真、简洁、明确、规范的原则</span><br><span class="afd_p">• 首先确定您是否需要使用悬赏提问；</span><br><span class="afd_p">• 问题中没必要出现“大神帮帮忙”、“教授救救我”之类与技术问题无关的信息，及时采纳最佳答案就是对回答人的最好认可；</span><br><span class="afd_p">• 问题标题要有明确而有价值的信息，“有人遇到过这种情况吗？帮忙进来看看”这种标题只会降低您的问题被回答的概率；</span><br><span class="afd_p">• “求代码”类的问题请您悬赏提问，我们乐于将其看成一种交易。</span><br><br><span class="afd_p">问答频道并不欢迎这种问题</span><br><span class="afd_p">• 和已有问题完全重复的问题，为避免重复，提问前请先进行搜索；</span><br><span class="afd_p">• 招聘 / 求职、交易 / 合作、寻人 / 征友；</span><br><span class="afd_p">• 无明确答案的调查类问题。如苹果和谷歌，大家更欣赏谁？</span><br><span class="afd_p">想学会更好的提问，请查看<span>&nbsp;</span><a href="http://ask.csdn.net/help" target="_blank">问答频道提问规范</a></span></div><div class="askFirst_se"><span>提问前请搜索</span></div><div class="search_div"><input id="askInput" placeholder="输入问题，查看是否存在相似的问题" type="text"></div></form> </div> <div class="success"></div></div><div class="pop_edit ask_second comm_ask_second"><h3>提问</h3><span class="ask_float_span">您的问题将会被发布在“<a class="ask_float_channel" href="http://ask.csdn.net/" target="_blank" style="cursor:pointer">技术问答</a>”频道</span><a href="#" nodetype="close" class="close">×</a><div class="context"><div class="err_div"><span class="err_ico"></span><span class="err_txt">该问题已存在，请勿重复提问</span></div><div class="input_div"><input id="askInputSecond" style="font-size:14px;" placeholder="输入问题，查看是否存在相似的问题" type="text"></div><div class="second_se">问题描述：</div> <div id="wmd-button-bar"><ul class="wmd-button-row"><li style="background-position: 0px 0px;" title="Strong &lt;strong&gt; Ctrl+B" class="wmd-button wmd-bold-button"></li><li style="background-position: -20px 0px;" title="Emphasis &lt;em&gt; Ctrl+I" class="wmd-button wmd-italic-button"></li><li class="wmd-spacer wmd-spacer1"></li><li style="background-position: -40px 0px;" title="Hyperlink &lt;a&gt; Ctrl+L" class="wmd-button wmd-link-button"></li><li style="background-position: -60px 0px;" title="Blockquote &lt;blockquote&gt; Ctrl+Q" class="wmd-button wmd-quote-button"></li><li style="background-position: -80px 0px;" title="Code Sample &lt;pre&gt;&lt;code&gt; Ctrl+K" class="wmd-button wmd-code-button"></li><li style="background-position: -100px 0px;" title="Image &lt;img&gt; Ctrl+G" class="wmd-button wmd-image-button"></li><li class="wmd-spacer wmd-spacer2"></li><li style="background-position: -120px 0px;" title="Numbered List &lt;ol&gt; Ctrl+O" class="wmd-button wmd-olist-button"></li><li style="background-position: -140px 0px;" title="Bulleted List &lt;ul&gt; Ctrl+U" class="wmd-button wmd-ulist-button"></li><li style="background-position: -160px 0px;" title="Heading &lt;h1&gt;/&lt;h2&gt; Ctrl+H" class="wmd-button wmd-heading-button"></li><li style="background-position: -180px 0px;" title="Horizontal Rule &lt;hr&gt; Ctrl+R" class="wmd-button wmd-hr-button"></li><li class="wmd-spacer wmd-spacer3"></li><li style="background-position: -200px -20px;" title="Undo - Ctrl+Z" class="wmd-button wmd-undo-button"></li><li style="background-position: -220px -20px;" title="Redo - Ctrl+Y" class="wmd-button wmd-redo-button"></li><li style="background-position: -240px 0px;" class="wmd-button wmd-help-button"><a title="WMD website" target="_blank" href="http://ask.csdn.net/pages/markdown"></a></li><li style="background-position: -260px 0px;" title="Shift+@" class="wmd-button wmd-at-button"></li></ul></div> <div id="previw-button"></div> <textarea id="wmd-input" rows="8"></textarea><div style="margin-right: 0px;" class="grippie"></div> <div id="wmd-preview" class="wmd-preview"></div><div class="div_tags clearfix"><div id="divSearchTags" class="tags_con"><input type="text"></div><input name="txtSearchTags" type="hidden"></div><div id="ask2_tagRecomm_div" class="drt_tagRecomm"><span class="drt_tit">推荐标签：</span></div></div><div class="success"><div class="left_area"><input id="chk_cb" type="checkbox"><span class="wyxs">我要悬赏</span><input id="cb_num" class="cb_num" readonly="true"><span class="phib_rii"><span> 币</span></span></div><a href="#" nodetype="cancel" class="cancel">取消</a><a href="#" nodetype="ok" class="ok">发布</a></div></div><div id="common_ask_div_sc" class="searchContainer"><div class="sTitle">可能存在类似的问题：</div><div class="sFooter"><a class="sFirstNewAsk">我想提一个新问题</a></div></div><link type="text/css" rel="stylesheet" href="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/message_pop.css"><div id="_popup_msg_container" style="display: block;">
+
+<div style="display: block; height: 250px;" wistate="max" id="im_popupWindow_miniMsg" class="im_popupWindow">
+	<h6 class="wi_draggable"><span>
+</span><a onclick="_message_tips_pop('down');return false;"><img alt="close" class="founctionpic3" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/pic_close.gif"></a></h6>
+    <div id="im_popupWindow_miniMsgContent" class="wi_content">
+		<div class="kuai">
+			<div style="width:280px;"><a href="http://bdtc2014.hadooper.cn/m/zone/bdtc_2014" target="_blank"><img src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/280.jpg" alt="" style="border:0;" title="" border="0"></a></div>
+		</div>
+	</div>
+<div class="content_qq"><span onclick="window.open('')" target="_blank"><font color="red">
+</font></span>
+ </div>
+ 
+ 
+</div>
+</div><img style="display: none;" src="windows%E4%B8%8B%E6%95%B4%E5%90%88UCenter%E3%80%81ECShop%E3%80%81Discus%20-%20%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/count_new.htm"></body></html>
